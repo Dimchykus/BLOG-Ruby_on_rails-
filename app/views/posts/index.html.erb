@@ -1,0 +1,33 @@
+
+<h1 class='main_title'>All posts</h1>
+
+<% flash.each do |key, value|%>
+  <p class='successes_mes'><%= value %></p>
+<%end%>
+
+<div class='new'>
+<%= link_to "Create new post", new_post_path %>
+</div>
+<div class="posts-container">
+  <% @posts.each do |post| %>
+    <div class="post">
+      <div class="name_likes">
+        <%= link_to post do %>
+          <h3 class='title index_title'> <%= post.title %> </h3>
+        <% end %>
+        <div class='likes'>
+          <p> <%= post.likes %> </p>
+        </div>
+      </div>
+      
+      <p class='body'> <%= post.body %> </p>
+      <p class='date'> <%= post.created_at %> </p>
+
+  
+      
+    </div>
+   
+  <% end %>
+</div>
+
+<%= will_paginate @posts %>

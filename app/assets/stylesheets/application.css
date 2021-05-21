@@ -1,0 +1,85 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+body{
+    background-color: #2d2d2d;
+}
+
+.successes_mes{
+    color: green;
+    font-size: 25px;
+}
+.main_title{
+    text-align: center;
+}
+.posts-container{
+    
+}
+.post{
+    border-bottom: 1px solid black;
+    width: 30%;
+    background-color: white;
+    border-radius: 15px;
+    padding:0px 5px;
+    margin: 5px auto;
+}
+.post p{
+    margin: 5px;
+}
+.title{
+    font-size: 25px;
+    margin: 10px 5px;
+}
+.body{
+
+}
+.date{
+
+}
+.new{
+    background-color: white;
+    padding: 5px;
+    display: inline-block;
+    border-radius: 15px;
+    font-size: 25px;
+}
+a{
+    text-decoration: none;
+}
+.name_likes{
+   
+}
+.index_title{
+    display: inline-block;
+}
+.likes{
+    float: right;
+    margin: auto 5px;
+    
+}
+.pagination{
+    text-align: center;
+    font-size: 25px;
+    color: white
+}
+.pagination a{
+    text-decoration: none;
+    color: white
+}
+.pagination a:hover{
+    text-decoration: none;
+    color: blue
+}

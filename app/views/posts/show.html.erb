@@ -1,0 +1,29 @@
+<% flash.each do |key, value|%>
+    <p class='successes_mes'><%= value %></p>
+<%end%>
+<div>
+
+<h1><%= @post.title %></h1>
+<p> <%= @post.body %> </p>
+<p>Likes:  <%= @post.likes %> </p>
+<p><%= @post.created_at %></p>
+
+<h2><%= @post.comments.count %></h2>
+    <%= render @post.comments %>
+    <h3>Add a comment</h3>
+    <%= render 'comments/form' %>
+
+</div>
+<div>
+    <%= link_to 'Edit', edit_post_path(@post.id) %>
+</div>
+<div>
+<%= link_to 'Delete', post_path(@post.id), method: :delete,
+  data: { confirm: "Are you sure?" }, remote: true %>
+</div>
+<div>
+    <%= link_to 'Back to all posts', posts_path %>
+</div>
+<div class="link-container">
+ 
+</div>
