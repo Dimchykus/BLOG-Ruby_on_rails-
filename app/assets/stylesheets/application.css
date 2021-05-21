@@ -17,7 +17,26 @@
 body{
     background-color: #fafafa;
 }
+.header{
+    background-color: white;
+    border-bottom: 1px solid rgba(var(--b6a,219,219,219),1);
 
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+}
+.user{
+    float: right;
+    display: inline-block;
+    font-size: 18px;
+}
+.icon{
+    height: 100%;
+    margin-left: 30px;
+}
+.icon img{
+    height: auto;
+    width: 30px;
+}
 .successes_mes{
     color: green;
     font-size: 25px;
@@ -31,7 +50,7 @@ body{
 .post{
     border: 1px solid rgba(var(--b6a,219,219,219),1);
     border-radius: 3px;
-    width: 30%;
+    width: 35%;
     background-color: white;
     color: rgba(var(--f75,38,38,38),1);
     margin: 5px auto;
@@ -63,7 +82,7 @@ body{
 }
 .new{
     background-color: white;
-    padding: 5px;
+   
     display: inline-block;
     border-radius: 15px;
     font-size: 25px;
@@ -71,8 +90,8 @@ body{
 a{
     text-decoration: none;
 }
-.name_likes{
-   
+.post_header{
+   padding: 5px;
 }
 .index_title{
     display: inline-block;
