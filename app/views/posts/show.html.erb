@@ -7,7 +7,7 @@
 <p> <%= @post.body %> </p>
 <p>Likes:  <%= @post.likes %> </p>
 <p><%= @post.created_at %></p>
-
+<%= image_tag(@post.image) %>
 <h2><%= @post.comments.count %></h2>
     <%= render @post.comments %>
     <h3>Add a comment</h3>
