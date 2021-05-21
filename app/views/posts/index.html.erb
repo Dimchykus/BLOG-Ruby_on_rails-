@@ -15,14 +15,16 @@
         <%= link_to post do %>
           <h3 class='title index_title'> <%= post.title %> </h3>
         <% end %>
-        <div class='likes'>
-          <p> <%= post.likes %> </p>
-        </div>
       </div>
-      
+      <div class='image'>
+        <%= image_tag(post.image) %>
+      </div>
       <p class='body'> <%= post.body %> </p>
       <p class='date'> <%= post.created_at %> </p>
 
+      <div class='likes'>
+        <p> <%= post.likes %> </p>
+      </div>
   
       
     </div>
