@@ -31,14 +31,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 #gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 
 
-group :development, :test do 
-  gem 'sqlite3'    #gem to use in development-test environment
-end
-
-group :production do 
- gem 'pg'         #gem to use in production environment
-end
-
+gem 'pg', '~> 1.1'
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
