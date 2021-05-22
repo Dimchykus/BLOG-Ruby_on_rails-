@@ -19266,3 +19266,75 @@ Completed 200 OK in 5ms (ActiveRecord: 0.0ms | Allocations: 1067)
 Completed 200 OK in 5ms (ActiveRecord: 0.0ms | Allocations: 814)
 
 
+Started GET "/" for 127.0.0.1 at 2021-05-22 12:58:10 +0300
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/posts/index.html.erb:8
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/posts/index.html.erb:8
+  [1m[36mActiveStorage::Attachment Load (1.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "Post"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:19
+  [1m[36mActiveStorage::Blob Load (1.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:19
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 4], ["record_type", "Post"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:19
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:19
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 5], ["record_type", "Post"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:19
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:19
+  Rendered posts/index.html.erb within layouts/application (Duration: 63.6ms | Allocations: 8341)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 117.0ms | Allocations: 11474)
+Completed 200 OK in 123ms (Views: 118.0ms | ActiveRecord: 8.5ms | Allocations: 12125)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--09d7ced55ca11cc41576d794fd1ddcab85e67752/download.jpeg" for 127.0.0.1 at 2021-05-22 12:58:11 +0300
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--09d7ced55ca11cc41576d794fd1ddcab85e67752", "filename"=>"download"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[36m  Disk Storage (2.7ms) [0m[34mGenerated URL for file at key: jhdmayzopnhkrus1xd7c2xijcqdx (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhhbWhrYldGNWVtOXdibWhyY25Wek1YaGtOMk15ZUdscVkzRmtlQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1SdmQyNXNiMkZrTG1wd1pXY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMlJ2ZDI1c2IyRmtMbXB3WldjR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIxLTA1LTIyVDEwOjAzOjExLjA5MVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--c44411f9df386cefc2a51071228e3d7ad3347ce2/download.jpeg)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhhbWhrYldGNWVtOXdibWhyY25Wek1YaGtOMk15ZUdscVkzRmtlQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1SdmQyNXNiMkZrTG1wd1pXY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMlJ2ZDI1c2IyRmtMbXB3WldjR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIxLTA1LTIyVDEwOjAzOjExLjA5MVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--c44411f9df386cefc2a51071228e3d7ad3347ce2/download.jpeg
+Completed 302 Found in 12ms (ActiveRecord: 0.1ms | Allocations: 1555)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--570579bc9d0c51bdebf09fa19aa10e41909e3efc/download%20(1).jpeg" for 127.0.0.1 at 2021-05-22 12:58:11 +0300
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--570579bc9d0c51bdebf09fa19aa10e41909e3efc", "filename"=>"download (1)"}
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[36m  Disk Storage (2.7ms) [0m[34mGenerated URL for file at key: vgeh6n5kgrhdreqtf56emh35yrr6 (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhkbWRsYURadU5XdG5jbWhrY21WeGRHWTFObVZ0YURNMWVYSnlOZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpVjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1SdmQyNXNiMkZrSUNVeU9ERWxNamt1YW5CbFp5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25aRzkzYm14dllXUWxNakFsTWpneEpUSTVMbXB3WldjR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIxLTA1LTIyVDEwOjAzOjExLjE3MVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--e3dca4214422c351cd1183d40ededc588f5357a8/download%20(1).jpeg)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhkbWRsYURadU5XdG5jbWhrY21WeGRHWTFObVZ0YURNMWVYSnlOZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpVjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1SdmQyNXNiMkZrSUNVeU9ERWxNamt1YW5CbFp5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25aRzkzYm14dllXUWxNakFsTWpneEpUSTVMbXB3WldjR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIxLTA1LTIyVDEwOjAzOjExLjE3MVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--e3dca4214422c351cd1183d40ededc588f5357a8/download%20(1).jpeg
+Completed 302 Found in 9ms (ActiveRecord: 0.3ms | Allocations: 1541)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--0692e393e5be46c139bbde563e0deb649d328f50/b4cde73a1d42d64bf11ea684ea1c2dd0.jpg" for 127.0.0.1 at 2021-05-22 12:58:11 +0300
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--0692e393e5be46c139bbde563e0deb649d328f50", "filename"=>"b4cde73a1d42d64bf11ea684ea1c2dd0"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+[36m  Disk Storage (0.7ms) [0m[34mGenerated URL for file at key: 5d2mwkhj7c37pc6bdfcy00pdzlxm (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhOV1F5YlhkcmFHbzNZek0zY0dNMlltUm1ZM2t3TUhCa2VteDRiUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpYzJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1JMFkyUmxOek5oTVdRME1tUTJOR0ptTVRGbFlUWTROR1ZoTVdNeVpHUXdMbXB3WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjbllqUmpaR1UzTTJFeFpEUXlaRFkwWW1ZeE1XVmhOamcwWldFeFl6SmtaREF1YW5CbkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSVBhVzFoWjJVdmFuQmxad1k3QmxRNkVYTmxjblpwWTJWZmJtRnRaVG9LYkc5allXdz0iLCJleHAiOiIyMDIxLTA1LTIyVDEwOjAzOjExLjE5MVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--3761465ec806379ec14c33f391d1788588c33fb4/b4cde73a1d42d64bf11ea684ea1c2dd0.jpg)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhOV1F5YlhkcmFHbzNZek0zY0dNMlltUm1ZM2t3TUhCa2VteDRiUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpYzJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1JMFkyUmxOek5oTVdRME1tUTJOR0ptTVRGbFlUWTROR1ZoTVdNeVpHUXdMbXB3WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjbllqUmpaR1UzTTJFeFpEUXlaRFkwWW1ZeE1XVmhOamcwWldFeFl6SmtaREF1YW5CbkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSVBhVzFoWjJVdmFuQmxad1k3QmxRNkVYTmxjblpwWTJWZmJtRnRaVG9LYkc5allXdz0iLCJleHAiOiIyMDIxLTA1LTIyVDEwOjAzOjExLjE5MVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--3761465ec806379ec14c33f391d1788588c33fb4/b4cde73a1d42d64bf11ea684ea1c2dd0.jpg
+Completed 302 Found in 13ms (ActiveRecord: 0.8ms | Allocations: 2628)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhkbWRsYURadU5XdG5jbWhrY21WeGRHWTFObVZ0YURNMWVYSnlOZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpVjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1SdmQyNXNiMkZrSUNVeU9ERWxNamt1YW5CbFp5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25aRzkzYm14dllXUWxNakFsTWpneEpUSTVMbXB3WldjR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIxLTA1LTIyVDEwOjAzOjExLjE3MVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--e3dca4214422c351cd1183d40ededc588f5357a8/download%20(1).jpeg" for 127.0.0.1 at 2021-05-22 12:58:11 +0300
+Processing by ActiveStorage::DiskController#show as JPEG
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhhbWhrYldGNWVtOXdibWhyY25Wek1YaGtOMk15ZUdscVkzRmtlQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1SdmQyNXNiMkZrTG1wd1pXY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMlJ2ZDI1c2IyRmtMbXB3WldjR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIxLTA1LTIyVDEwOjAzOjExLjA5MVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--c44411f9df386cefc2a51071228e3d7ad3347ce2/download.jpeg" for 127.0.0.1 at 2021-05-22 12:58:11 +0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"download"}
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"download (1)"}
+Completed 200 OK in 3ms (ActiveRecord: 0.0ms | Allocations: 320)
+
+
+Completed 200 OK in 7ms (ActiveRecord: 0.0ms | Allocations: 1114)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhOV1F5YlhkcmFHbzNZek0zY0dNMlltUm1ZM2t3TUhCa2VteDRiUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpYzJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1JMFkyUmxOek5oTVdRME1tUTJOR0ptTVRGbFlUWTROR1ZoTVdNeVpHUXdMbXB3WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjbllqUmpaR1UzTTJFeFpEUXlaRFkwWW1ZeE1XVmhOamcwWldFeFl6SmtaREF1YW5CbkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSVBhVzFoWjJVdmFuQmxad1k3QmxRNkVYTmxjblpwWTJWZmJtRnRaVG9LYkc5allXdz0iLCJleHAiOiIyMDIxLTA1LTIyVDEwOjAzOjExLjE5MVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--3761465ec806379ec14c33f391d1788588c33fb4/b4cde73a1d42d64bf11ea684ea1c2dd0.jpg" for 127.0.0.1 at 2021-05-22 12:58:11 +0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"b4cde73a1d42d64bf11ea684ea1c2dd0"}
+Completed 200 OK in 3ms (ActiveRecord: 0.0ms | Allocations: 313)
+
+
