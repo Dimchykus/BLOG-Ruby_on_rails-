@@ -20,8 +20,15 @@
       </div>
       <p class='body'> <%= post.body %> </p>
       <p class='date'> <%= post.created_at %> </p>
-
-   
+      <%= render post.comments %>
+      
+      <%= form_for([ post, post.comments.build ])  do |f| %>
+        <p>
+        <%= f.label :body, "New Comment" %><br/>
+        <%= f.text_area :body %>
+        </p>
+        <p><%= f.submit "Add Comment"%></p>
+      <% end %>
   
       
     </div>

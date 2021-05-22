@@ -82,5 +82,5 @@ test:
 production:
   <<: *default
   database: BLOG_Ruby_on_rails__production
-  username: BLOG_Ruby_on_rails_
-  password: <%= ENV['BLOG_RUBY_ON_RAILS__DATABASE_PASSWORD'] %>
+  username: dimchykus
+  password: 12345678
