@@ -145,3 +145,17 @@ a{
     height: auto;
     
 }
+.search{
+   
+}
+@media only screen and (max-width: 600px) {
+    .post{
+        border: 1px solid rgba(var(--b6a,219,219,219),1);
+        border-radius: 3px;
+        width: 100%;
+        background-color: white;
+        color: rgba(var(--f75,38,38,38),1);
+        margin: 5px auto;
+        
+    }
+  }
