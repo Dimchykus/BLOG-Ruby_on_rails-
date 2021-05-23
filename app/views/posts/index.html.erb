@@ -11,6 +11,7 @@
 
 <div class="posts-container">
   <% @posts.each do |post| %>
+    <%= post.user.username%>
     <div class="post">
       <div class="post_header">
         <div>

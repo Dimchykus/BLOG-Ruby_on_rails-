@@ -14,7 +14,7 @@ class PostsController < ApplicationController
     end
 
     def create
-        @post = Post.new(post_params)
+        @post = Post.new(post_params.merge(user_id: current_user.id))
         # @post.author = current_user
         if @post.save
             redirect_to @post, :notice => "Post was created successfully"
