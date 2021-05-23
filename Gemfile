@@ -7,7 +7,7 @@ ruby '3.0.1'
 gem 'rails', '~> 6.1.3', '>= 6.1.3.2'
 gem 'devise'
 # Use pg as the database for Active Record
-
+gem 'pg'
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
 # Use SCSS for stylesheets
@@ -36,7 +36,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
   #   #gem 'sqlite3'
   # end
 
-gem 'pg'
+
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
