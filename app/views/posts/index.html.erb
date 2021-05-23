@@ -1,8 +1,6 @@
 
 
-<% flash.each do |key, value|%>
-  <p class='successes_mes'><%= value %></p>
-<%end%>
+
 
 <%= form_tag posts_path, method: :get do%>
   <%= text_field_tag :search, params[:search]%>
@@ -11,32 +9,42 @@
 
 <div class="posts-container">
   <% @posts.each do |post| %>
-    <%= post.user.username%>
+    
     <div class="post">
+
       <div class="post_header">
-        <div>
-          <%= link_to post do %>
-            <h3 class='title index_title'> <%= post.title %> </h3>
-          <% end %>
+        <img class='username_icon' src='https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Red_circle.svg/1200px-Red_circle.svg.png'></img>
+        <div class='username'>
+          <p class='username_text'><%= post.user.username%></p>
         </div>
-        
       </div>
+
       <div class='image'>
         <%= image_tag(post.image) %>
       </div>
+      <h4 class='title index_title'> <%= post.title %> </h4>
       <p class='body'> <%= post.body %> </p>
       <p class='date'> <%= post.created_at %> </p>
       <%= render post.comments %>
-      
-      <%= form_for([ post, post.comments.build ])  do |f| %>
-        <p>
-        <%= f.label :body, "New Comment" %><br/>
-        <%= f.text_area :body %>
-        </p>
-        <p><%= f.submit "Add Comment"%></p>
-      <% end %>
-     
-      
+      <div class='new_comment'>
+        <%= form_for([ post, post.comments.build ])  do |f| %>
+          
+          <%= f.text_area :body, class: "comment_input", placeholder: "Enter comment" %>
+         
+          <p><%= f.submit "Add Comment"%></p>
+        <% end %>
+      </div>
+      <div>
+        <%= link_to 'Edit', edit_post_path(post.id) %>
+      </div>
+      <div>
+        <% if user_signed_in?%>
+          <% if current_user.id === post.user_id%>
+            <%= link_to 'Delete', post_path(post.id), method: :delete,
+            data: { confirm: "Are you sure?" }, remote: true %>
+          <%end%>
+        <%end%>
+      </div>
     </div>
    
   <% end %>

@@ -13,20 +13,23 @@
   <body>
   <header class="header">
     <div class='icon'>
-    <a href="/posts"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/1024px-Instagram_icon.png"></img>
-    </a>
+      <a href="/posts"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/1024px-Instagram_icon.png"></img>
+      </a>
+      <% flash.each do |key, value|%>
+        <p class='successes_mes'><%= value %></p>
+      <%end%>
     </div>
     <div class='new'>
       <%= link_to "Create new post", new_post_path %>
     </div>
     <div class='user'>
-    <% if user_signed_in?%>
-    <%= current_user.username %>
-    <%= link_to 'Log out', destroy_user_session_path, method: :delete,
-                        data: { confirm: "Are you sure?" }%>
-<% else %>
-    <%= link_to 'Log in', new_user_session_path%>
-<% end %>
+      <% if user_signed_in?%>
+      <%= current_user.username %>
+      <%= link_to 'Log out', destroy_user_session_path, method: :delete,
+                          data: { confirm: "Are you sure?" }%>
+  <% else %>
+      <%= link_to 'Log in', new_user_session_path%>
+  <% end %>
     </div>
 </header>
   

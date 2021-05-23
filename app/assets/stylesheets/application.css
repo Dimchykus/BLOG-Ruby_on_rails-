@@ -22,12 +22,13 @@ body{
     border-bottom: 1px solid rgba(var(--b6a,219,219,219),1);
 
     display: grid;
-    grid-template-columns: 33% 33% 33%;
+    grid-template-columns: 35% 30% 35%;
 }
 .user{
     float: right;
     display: inline-block;
     font-size: 18px;
+    text-align: right;
 }
 .icon{
     height: 100%;
@@ -39,7 +40,10 @@ body{
 }
 .successes_mes{
     color: green;
-    font-size: 25px;
+    font-size: 18px;
+    display: inline-block;
+    margin: auto 0;
+    margin-left: 15px;
 }
 .main_title{
     text-align: center;
@@ -50,7 +54,7 @@ body{
 .post{
     border: 1px solid rgba(var(--b6a,219,219,219),1);
     border-radius: 3px;
-    width: 35%;
+    width: 30%;
     background-color: white;
     color: rgba(var(--f75,38,38,38),1);
     margin: 5px auto;
@@ -92,7 +96,11 @@ a{
 }
 .post_header{
    padding: 5px;
+   display: inline-flex;
 }
+.post_header img{
+    margin: auto 0;
+ }
 .index_title{
     display: inline-block;
 }
@@ -113,4 +121,27 @@ a{
 .pagination a:hover{
     text-decoration: none;
     color: blue
+}
+.new_comment{
+    width: 100%;
+}
+.comment_input{
+    width: 100%;
+}
+.comment{
+    display: block;
+}
+.username{
+    color: rgba(var(--f75,38,38,38),1);
+    display: inline-block;
+}
+.username_text{
+    margin: auto 5px;
+    text-align: center;
+    vertical-align: middle;
+}
+.username_icon{
+    width: 15px;
+    height: auto;
+    
 }

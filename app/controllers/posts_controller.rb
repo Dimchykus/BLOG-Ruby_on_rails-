@@ -3,7 +3,7 @@ class PostsController < ApplicationController
     before_action :authenticate_user!, only: %i[new create edit update destroy]
     def index
         #@posts = Post.all
-         @posts = Post.paginate(page: params[:page], per_page: 5).where(["title LIKE ?","%#{params[:search]}%"])
+        @posts = Post.paginate(page: params[:page], per_page: 5).where(["title LIKE ?","%#{params[:search]}%"])
     end
     def show
         @post = Post.find(params[:id])
@@ -17,7 +17,7 @@ class PostsController < ApplicationController
         @post = Post.new(post_params.merge(user_id: current_user.id))
         # @post.author = current_user
         if @post.save
-            redirect_to @post, :notice => "Post was created successfully"
+            redirect_to posts_path, :notice => "Post was created successfully"
         else
             render :new
         end 
@@ -34,7 +34,7 @@ class PostsController < ApplicationController
         @post = Post.find(params[:id])
 
         if @post.update(post_params)
-            redirect_to @post, :notice => "Post was updated successfully"
+            redirect_to posts_path, :notice => "Post was updated successfully"
         else
             render :edit
         end
