@@ -3,7 +3,7 @@ class PostsController < ApplicationController
     before_action :authenticate_user!, only: %i[new create edit update destroy]
     def index
         #@posts = Post.all
-        @posts = Post.paginate(page: params[:page], per_page: 5).where(["title LIKE ?","%#{params[:search]}%"])
+        @posts = Post.paginate(page: params[:page], per_page: 5).where(["title LIKE ?","%#{params[:search]}%"]).order('created_at DESC')
     end
     def show
         @post = Post.find(params[:id])

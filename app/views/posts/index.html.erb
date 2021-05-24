@@ -7,6 +7,11 @@
     <%= submit_tag "Search"%>
   <%end%>
 </div>
+<% if user_signed_in?%>
+  <% if current_user.admin%>
+        <p>You are ADMIN</p>
+  <%end%>
+<%end%>
 <div class="posts-container">
   <% @posts.each do |post| %>
     
@@ -34,14 +39,23 @@
           <p><%= f.submit "Add Comment"%></p>
         <% end %>
       </div>
-      <div>
-        <%= link_to 'Edit', edit_post_path(post.id) %>
-      </div>
+     
       <div>
         <% if user_signed_in?%>
-          <% if current_user.id === post.user_id%>
+          <% if current_user.admin%>
+            <div>
+              <%= link_to 'Edit', edit_post_path(post.id) %>
+            </div>
             <%= link_to 'Delete', post_path(post.id), method: :delete,
             data: { confirm: "Are you sure?" }, remote: true %>
+          <%else%>
+            <% if current_user.id === post.user_id%>
+              <div>
+                <%= link_to 'Edit', edit_post_path(post.id) %>
+              </div>
+              <%= link_to 'Delete', post_path(post.id), method: :delete,
+              data: { confirm: "Are you sure?" }, remote: true %>
+            <%end%>
           <%end%>
         <%end%>
       </div>
