@@ -18,6 +18,11 @@
       <% flash.each do |key, value|%>
         <p class='successes_mes'><%= value %></p>
       <%end%>
+      <% if user_signed_in?%>
+        <% if current_user.admin%>
+          <h4 style='margin:0 10px; display:inline-block;'>You are ADMIN</h4>
+        <%end%>
+      <%end%>
     </div>
     <div class='new'>
       <%= link_to "Create new post", new_post_path %>

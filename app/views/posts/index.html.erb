@@ -2,16 +2,14 @@
 
 
 <div class='search'>
-  <%= form_tag posts_path, method: :get do%>
-    <%= text_field_tag :search, params[:search]%>
-    <%= submit_tag "Search"%>
-  <%end%>
+  <div class='search_center'>
+    <%= form_tag posts_path, method: :get do%>
+      <%= text_field_tag :search, params[:search]%>
+      <%= submit_tag "Search"%>
+    <%end%>
+  </div>
 </div>
-<% if user_signed_in?%>
-  <% if current_user.admin%>
-        <p>You are ADMIN</p>
-  <%end%>
-<%end%>
+
 <div class="posts-container">
   <% @posts.each do |post| %>
     
