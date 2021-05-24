@@ -4,7 +4,7 @@ class CreatePost < ActiveRecord::Migration[6.1]
       t.string :title
       t.text :body
       t.integer :likes, :null => false, :default => 0
-
+      t.timestamps
     end
   end
 end
