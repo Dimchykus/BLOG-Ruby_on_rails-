@@ -6,5 +6,3 @@ application up and running.
 Things you may want to cover:
 Heroku link:
 https://insta-twitter.herokuapp.com/posts
-
-Admin User - Login: Dimchykus, Pass:123123
